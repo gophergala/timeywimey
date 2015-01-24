@@ -6,6 +6,7 @@ import (
 	"gopkg.in/mgo.v2"
 )
 
+// Generic insertion statement
 func Insert(collectionName string, object interface{}) error {
 	mongoUri := connectionString()
 	sess, err := mgo.Dial(mongoUri)
@@ -24,10 +25,11 @@ func Insert(collectionName string, object interface{}) error {
 	return nil
 }
 
+// Get the MongoDB connection string
 func connectionString() string {
 	env := os.Getenv("TW_MONGO_URL")
 	if env == "" {
-		return "localhost"
+		return "localhost:27017"
 	}
 	return env
 }
