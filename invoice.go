@@ -1,8 +1,6 @@
 package main
 
 import (
-	"encoding/json"
-	"io"
 	"math/big"
 	"time"
 
@@ -18,16 +16,4 @@ type Invoice struct {
 	Author       string        `json:"author" bson:"author"`
 	Created      time.Time     `json:"created" bson:"created"`
 	LastModified time.Time     `json:"lastModified" bson:"lastModified"`
-}
-
-func (i *Invoice) FromJson(r io.Reader) error {
-	return json.NewDecoder(r).Decode(&i)
-}
-
-func (i *Invoice) ToJson() ([]byte, error) {
-	return json.Marshal(i)
-}
-
-func (i *Invoice) Insert() error {
-	return Insert("invoices", interface{}(i))
 }

@@ -16,25 +16,22 @@
 </head>
 <body>
     <div class="container">
-        <form class="form" action=".." method="POST">
-            <input type="hidden" name="id" value="" />
-            <label for="startDate">Start Date</label>
-            <input name="startDate" type="text" class="form-control" value="" />
-            <label for="endDate">End Date</label>
-            <input name="endDate" type="text" class="form-control" value="" />
-            <label for="entries">Billable Items</label>
-            <input name="entries[]" type="text" class="form-control" value="" />
-            <input name="entries[]" type="text" class="form-control" value="" />
-            <input name="entries[]" type="text" class="form-control" value="" />
-            <input name="entries[]" type="text" class="form-control" value="" />
-            <input name="entries[]" type="text" class="form-control" value="" />
-            <label for="taxes">Taxes</label>
-            <input name="taxes" type="text" class="form-control" value="" />
-            <input type="submit" class="btn btn-default" value="Save" />
+        <h1>Create a new project</h1>
+        <hr />
+        <form class="form" action="new" method="POST">
+            <div class="form-group">
+                <label for="member">Team Members</label>
+                <input name="member" type="text" class="form-control" placeholder="friend@email.com" />
+                <input name="member" type="text" class="form-control" placeholder="friend@email.com" />
+                <input name="member" type="text" class="form-control" placeholder="friend@email.com" />
+                <input name="member" type="text" class="form-control" placeholder="friend@email.com" />
+                <input name="member" type="text" class="form-control" placeholder="friend@email.com" />
+            </div>
+            <input type="submit" class="btn btn-default" value="Create Project" />
+            <a href="javascript: history.go(-1);" title="Ooops! Get me out of here!" class="btn btn-danger">Cancel</a>
         </form>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
-
